@@ -81,7 +81,7 @@ fun EasyFetchApp(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Image(
-                            painter = painterResource(id = R.mipmap.ic_launcher),
+                            painter = painterResource(id = R.drawable.app_logo_mark),
                             contentDescription = null,
                             contentScale = ContentScale.Crop,
                             modifier = Modifier
