@@ -1,11 +1,6 @@
 package com.easyfetch.app.ui
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.VideoLibrary
@@ -21,13 +16,8 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -46,7 +36,6 @@ import com.easyfetch.app.ui.library.LibraryViewModelFactory
 import com.easyfetch.app.ui.theme.ElectricCyan
 import com.easyfetch.app.ui.theme.Midnight
 import com.easyfetch.app.ui.theme.MidnightDeep
-import com.easyfetch.app.ui.theme.MidnightSurface
 import com.easyfetch.app.ui.theme.Mist
 import com.easyfetch.app.ui.theme.Paper
 
@@ -79,18 +68,11 @@ fun EasyFetchApp(
         topBar = {
             TopAppBar(
                 title = {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Image(
-                            painter = painterResource(id = R.drawable.app_logo_mark),
-                            contentDescription = null,
-                            contentScale = ContentScale.Crop,
-                            modifier = Modifier
-                                .size(28.dp)
-                                .clip(RoundedCornerShape(8.dp))
-                        )
-                        Spacer(modifier = Modifier.size(10.dp))
-                        Text(stringResource(R.string.app_name))
-                    }
+                    Text(
+                        text = stringResource(R.string.app_name),
+                        style = androidx.compose.material3.MaterialTheme.typography.titleLarge,
+                        color = Paper
+                    )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MidnightDeep,
